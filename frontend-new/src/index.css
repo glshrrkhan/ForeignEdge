@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --brand: #00D26A; --brand-dark: #00A854; --brand-light: #E8FFF3; }
+* { box-sizing: border-box; }
+body { font-family: 'Outfit', system-ui, sans-serif; background: #fff; color: #1a1a1a; margin: 0; }
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f9f9f9; }
+::-webkit-scrollbar-thumb { background: #00D26A; border-radius: 3px; }
+
+@layer components {
+  .btn-primary { @apply bg-[#00D26A] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#00A854] transition-all duration-200 shadow-sm hover:shadow-md active:scale-95; }
+  .btn-secondary { @apply bg-white text-[#00D26A] font-semibold px-6 py-3 rounded-xl border-2 border-[#00D26A] hover:bg-[#E8FFF3] transition-all duration-200; }
+  .card { @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100; }
+  .card-hover { @apply card hover:-translate-y-0.5; }
+  .badge { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold; }
+  .badge-green { @apply badge bg-[#E8FFF3] text-[#00D26A]; }
+  .input-field { @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00D26A] text-sm transition-colors; }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
