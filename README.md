@@ -71,3 +71,37 @@ Runs at `http://localhost:5173`
 ---
 
 ## 📁 Project Structure
+foreignedge/
+
+├── backend/
+
+│   ├── app.py               ← Flask entry point
+
+│   ├── requirements.txt
+
+│   ├── Procfile             ← Railway deploy
+
+│   ├── models/
+
+│   │   ├── database.py      ← 11 SQLAlchemy models
+
+│   │   └── seed.py          ← auto-seeds all datasets
+
+│   └── routes/              ← auth, universities, scholarships, chatbot, admin...
+
+│
+
+└── frontend-new/
+
+├── src/
+
+│   ├── pages/           ← 20+ pages
+
+│   ├── components/      ← Navbar, Sidebar, Chatbot widget
+
+│   ├── context/         ← AuthContext
+
+│   └── utils/api.js     ← all API calls via Axios
+
+└── .env                 ← VITE_API_URL
+
