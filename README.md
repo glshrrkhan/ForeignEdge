@@ -1,113 +1,73 @@
 # 🌍 ForeignEdge — Study Abroad Platform
 
-Full-stack platform for international students. React + Vite frontend, Python Flask backend.
+> AI-powered platform that helps Pakistani and international students plan their entire study abroad journey in one place.
 
 ---
 
-## 🚀 Run Locally (VS Code)
+## ✨ What it does
 
-Open **two terminals** in VS Code.
+ForeignEdge centralises university discovery, scholarship matching, accommodation search and visa guidance for international students. An AI evaluation engine powered by **Groq Llama 3.3-70B** queries a live database and returns personalised university recommendations, matched scholarships and a month-by-month preparation roadmap based on the student's academic profile.
 
-### Terminal 1 — Backend
+---
 
+## 🚀 Key Features
+
+- 🧠 **AI Profile Evaluation** — 5-step wizard that queries real DB records and returns matched universities, scholarships and a personalised roadmap
+- 💬 **AI Chatbot** — floating assistant on every page with live database context
+- 🏛️ **University Search** — 822 universities across 13 countries with advanced filters
+- 🏆 **Scholarship Finder** — 613 scholarships from the 2026-27 cycle
+- 🏠 **Accommodation** — 1,440 listings with images from 10 international platforms
+- 🍽️ **Halal Restaurant Finder** — 1,500 restaurants with halal filter by country and city
+- ✈️ **Airlines Directory** — student discounts, baggage info and flight search
+- 🛂 **Passport & Visa Guide** — requirements for 40+ countries
+- 🌍 **Intelligence Hub** — economy, employment and education rankings across 13 countries
+- 🛠️ **25 Free Study Tools** — cost of living, GPA converter, budget planner, currency converter and more
+- 🛡️ **Admin Panel** — full content management, user control and live database viewer
+
+---
+
+## 📊 Platform Scale
+
+| Universities | Scholarships | Accommodation | Countries |
+|---|---|---|---|
+| 822 | 613 | 1,440 listings | 13 |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
+|---|---|
+| Frontend | React 18, Vite, Tailwind CSS, React Router v6 |
+| UI Libraries | Recharts, Framer Motion, Lucide React, React Hot Toast |
+| Backend | Python Flask 3.0, SQLAlchemy, Flask-JWT-Extended, Flask-Bcrypt |
+| Database | SQLite (dev) / PostgreSQL (prod) |
+| AI | Groq API — Llama 3.3-70B-Versatile |
+| Auth | JWT tokens, bcrypt password hashing, RBAC |
+| Deploy | Gunicorn, Railway-ready |
+
+---
+
+## 🚀 Run Locally
+
+**Terminal 1 — Backend**
 ```bash
 cd backend
 pip install -r requirements.txt
 python app.py
 ```
+Runs at `http://localhost:5000`
 
-Backend runs at: **http://localhost:5000**
-
-> Database and seed data are created automatically on first run.
-
-### Terminal 2 — Frontend
-
+**Terminal 2 — Frontend**
 ```bash
 cd frontend-new
 npm install
 npm run dev
 ```
+Runs at `http://localhost:5173`
 
-Frontend runs at: **http://localhost:5173**
-
----
-
-## 🔐 Demo Login
-
-| Role    | Email                    | Password   |
-|---------|--------------------------|------------|
-| Admin   | admin@foreignedge.com    | admin123   |
-| Student | student@demo.com         | student123 |
+> Database and all datasets are seeded automatically on first run.
 
 ---
 
-## 🤖 AI Evaluation (Optional)
-
-Get a free Groq API key at [console.groq.com](https://console.groq.com), then create `backend/.env`:
-
-```
-GROQ_API_KEY=your_key_here
-```
-
-Without it, the AI evaluation uses a mock response — everything else works fine.
-
----
-
-## 🚂 Deploy to Railway
-
-### Backend
-1. Create a new Railway project → **Deploy from GitHub** (push your `backend/` folder)
-2. Railway auto-detects Python and uses the `Procfile` (`gunicorn app:app`)
-3. Add environment variables in Railway dashboard:
-   - `SECRET_KEY` — any random string
-   - `JWT_SECRET_KEY` — any random string
-   - `GROQ_API_KEY` — (optional)
-   - `FRONTEND_URL` — your frontend Railway URL
-
-### Frontend
-1. Create another Railway service → deploy `frontend-new/`
-2. Add environment variable:
-   - `VITE_API_URL` — your backend Railway URL + `/api`  
-     e.g. `https://foreignedge-backend.railway.app/api`
-3. Build command: `npm run build`
-4. Start command: `npx serve dist`
-
----
-
-## 📁 Structure
-
-```
-foreignedge/
-├── backend/              ← Flask API
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── Procfile          ← Railway start command
-│   ├── .env              ← local secrets (not committed)
-│   ├── models/
-│   │   ├── database.py   ← SQLAlchemy models
-│   │   └── seed.py       ← auto seed on first run
-│   └── routes/           ← auth, universities, scholarships, etc.
-│
-└── frontend-new/         ← React + Vite
-    ├── .env              ← VITE_API_URL=http://localhost:5000/api
-    ├── package.json
-    └── src/
-        ├── pages/        ← 20 pages
-        ├── components/
-        ├── context/
-        └── utils/api.js  ← all API calls
-```
-
----
-
-## 🛠 Tech Stack
-
-| | |
-|---|---|
-| Frontend | React 18, Vite, Tailwind CSS, react-router-dom |
-| UI libs | lucide-react, recharts, framer-motion, react-hot-toast |
-| Backend | Flask, SQLAlchemy, Flask-JWT-Extended, Flask-Bcrypt |
-| Database | SQLite (local) / PostgreSQL (Railway) |
-| AI | Groq API — llama-3.3-70b |
-# ForeignEdge
-# ForeignEdge
+## 📁 Project Structure
