@@ -364,27 +364,6 @@ Visit **http://localhost:5173** and log in with the demo credentials below.
 
 ---
 
-## 🌿 Environment Variables
-
-### Backend (`backend/.env`)
-
-| Variable | Required | Description |
-|---|---|---|
-| `SECRET_KEY` | ✅ | Flask session secret — use any long random string in production |
-| `JWT_SECRET_KEY` | ✅ | JWT signing key — use any long random string in production |
-| `GROQ_API_KEY` | ⚠️ Optional | Groq LLM key. Get free at [console.groq.com](https://console.groq.com). Without it, chatbot returns a mock response. |
-| `DATABASE_URL` | ⚠️ Optional | PostgreSQL connection string (Railway injects this automatically). Defaults to local SQLite. |
-| `FRONTEND_URL` | ⚠️ Optional | Frontend URL added to CORS allow-list (needed in production). |
-| `FLASK_ENV` | ⚠️ Optional | `development` or `production`. Defaults to `development`. |
-
-### Frontend (`frontend-new/.env`)
-
-| Variable | Required | Description |
-|---|---|---|
-| `VITE_API_URL` | ✅ | Backend API base URL. E.g. `http://localhost:5000/api` locally or your Railway URL in production. |
-
----
-
 ## 📡 API Reference
 
 All endpoints are prefixed with `/api`.
@@ -722,7 +701,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 👨‍💻 Authors
 
-- **[Your Name]** — Full-stack development, AI/RAG pipeline, database design
+- **Gul Sher Khan** — Full-stack development, AI/RAG pipeline, database design
 
 ---
 
